@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RDC Football Network — V2 Bêta</title>
+<meta name="description" content="RDC Football Network — plateforme publique du football congolais.">
+<style>
+:root{--blue:#007fff;--red:#ce1021;--yellow:#f7d618;--navy:#06111f;--card:#0c1b2d;--line:#20344a;--text:#f5f8fb;--muted:#9fb0c0}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(6,17,31,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:950;letter-spacing:-.7px}.logo b{color:var(--blue)}.logo i{font-style:normal;color:var(--yellow)}.nav a{margin-left:22px;color:#c9d5df;font-size:14px}.nav a:hover{color:#fff}
+.hero{padding:90px 0 70px;position:relative;overflow:hidden;background:linear-gradient(125deg,rgba(0,127,255,.18),transparent 42%),linear-gradient(315deg,rgba(206,16,33,.13),transparent 40%)}.hero:after{content:"";position:absolute;right:-130px;top:-120px;width:430px;height:430px;border-radius:50%;border:70px solid rgba(247,214,24,.06)}.eyebrow{display:inline-flex;padding:7px 12px;border-radius:99px;background:#102b45;border:1px solid #1d5685;color:#75bdff;font-size:12px;font-weight:900}.hero h1{font-size:clamp(45px,7vw,78px);line-height:.96;letter-spacing:-4px;max-width:850px;margin:22px 0}.hero h1 span{color:var(--blue)}.hero p{max-width:700px;color:#b4c2ce;font-size:18px;line-height:1.6}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:13px 18px;border-radius:10px;font-weight:900;border:1px solid var(--line)}.primary{background:var(--blue);border-color:var(--blue);color:white}.secondary{background:#0d1d30}
+section{padding:58px 0}.title{font-size:34px;margin:0 0 7px}.sub{color:var(--muted);margin:0 0 25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}.flagline{height:4px;background:linear-gradient(90deg,var(--blue) 0 60%,var(--red) 60% 82%,var(--yellow) 82%)}.card h3{margin:12px 0 7px}.card p{color:var(--muted);line-height:1.5}.num{font-size:30px;font-weight:950;color:var(--yellow)}
+.search{display:flex;gap:10px;margin:20px 0}.search input,.search select{flex:1;background:#0b1929;color:white;border:1px solid var(--line);padding:14px;border-radius:10px;outline:none}.players{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.player{background:#0b1929;border:1px solid var(--line);border-radius:14px;padding:18px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-weight:950;background:linear-gradient(145deg,var(--blue),#073c76);border:2px solid var(--yellow)}.pos{font-size:12px;color:#6dbbff}.meta{color:var(--muted);font-size:13px}.score{margin-top:13px;font-weight:900}.tag{display:inline-block;margin-top:11px;padding:5px 8px;border-radius:99px;border:1px solid #38506a;color:#aebdca;font-size:11px}
+table{width:100%;border-collapse:collapse;background:#0b1929;border:1px solid var(--line)}th,td{padding:14px;text-align:left;border-bottom:1px solid var(--line);font-size:14px}th{color:#77c1ff}td{color:#cbd6df}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#8495a5}.footerflag{width:80px;height:4px;background:linear-gradient(90deg,var(--blue) 0 60%,var(--red) 60% 82%,var(--yellow) 82%);margin-bottom:15px}
+@media(max-width:850px){.players,.grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}@media(max-width:520px){.players,.grid{grid-template-columns:1fr}.search{flex-direction:column}.hero h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#">RDC <b>FOOTBALL</b> <i>NETWORK</i></a>
+<nav class="navlinks"><a href="#joueurs">Joueurs</a><a href="#clubs">Clubs</a><a href="#competitions">Compétitions</a><a href="#scouting">Scouting</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+<span class="eyebrow">🇨🇩 BÊTA PUBLIQUE · V2</span>
+<h1>Le réseau du <span>football congolais.</span></h1>
+<p>Référencer, documenter et connecter les talents, clubs et compétitions de la RDC au monde du football.</p>
+<div class="actions"><a class="btn primary" href="#joueurs">Explorer les joueurs</a><a class="btn secondary" href="#scouting">RDC Next Gen Scout</a></div>
+</div></section>
+
+<section><div class="wrap"><h2 class="title">Une plateforme pensée pour la RDC</h2><p class="sub">Première version publique : simple, gratuite et construite pour évoluer.</p>
+<div class="grid">
+<div class="card"><div class="num">01</div><div class="flagline"></div><h3>Base joueurs</h3><p>Recherche et profils structurés pour commencer à documenter les talents congolais.</p></div>
+<div class="card"><div class="num">02</div><div class="flagline"></div><h3>Clubs & compétitions</h3><p>Une architecture pour centraliser progressivement le football national et les académies.</p></div>
+<div class="card"><div class="num">03</div><div class="flagline"></div><h3>Scouting & data</h3><p>La future couche professionnelle : statistiques, rapports, NGA Value et shortlists.</p></div>
+</div></div></section>
+
+<section id="joueurs"><div class="wrap"><h2 class="title">Joueurs</h2><p class="sub">Profils fictifs de démonstration pour la bêta.</p>
+<div class="search"><input id="q" placeholder="Rechercher un joueur, club ou ville…" oninput="filter()"><select id="p" onchange="filter()"><option value="">Tous les postes</option><option>Gardien</option><option>Défenseur</option><option>Milieu</option><option>Attaquant</option></select></div>
+<div class="players" id="players"></div></div></section>
+
+<section id="clubs"><div class="wrap"><h2 class="title">Clubs</h2><p class="sub">Structure prête à recevoir la future base réelle.</p>
+<table><thead><tr><th>Club</th><th>Ville</th><th>Compétition</th><th>Statut</th></tr></thead><tbody>
+<tr><td>Club de démonstration</td><td>Kinshasa</td><td>Ligue 1</td><td>Profil bêta</td></tr>
+<tr><td>Club de démonstration</td><td>Lubumbashi</td><td>Ligue 1</td><td>Profil bêta</td></tr>
+<tr><td>Académie de démonstration</td><td>Kinshasa</td><td>Jeunes</td><td>Profil bêta</td></tr>
+</tbody></table></div></section>
+
+<section id="competitions"><div class="wrap"><h2 class="title">Compétitions</h2><div class="grid">
+<div class="card"><h3>🇨🇩 Ligue 1</h3><p>Première division nationale.</p></div><div class="card"><h3>🇨🇩 Ligue 2</h3><p>Deuxième niveau national.</p></div><div class="card"><h3>🏆 Jeunes</h3><p>Architecture prévue pour U17 et U19.</p></div>
+</div></div></section>
+
+<section id="scouting"><div class="wrap"><h2 class="title">RDC Next Gen Scout</h2><p class="sub">La cellule de scouting du projet.</p><div class="grid">
+<div class="card"><h3>🔎 Rapports</h3><p>Évaluation technique, tactique, physique, mentale et potentiel.</p></div>
+<div class="card"><h3>📊 NGA Value</h3><p>Future estimation algorithmique du marché, avec niveau de confiance.</p></div>
+<div class="card"><h3>🇨🇩 → 🇪🇺 Europe</h3><p>À terme, connecter les profils congolais aux recruteurs et clubs internationaux.</p></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap"><div class="footerflag"></div><strong>RDC Football Network</strong><p>Projet en bêta. Les profils affichés sont des exemples et ne constituent pas une base officielle.</p></div></footer>
+
+<script>
+const data=[
+["Prospect Démo 01","Milieu","Kinshasa","2007"],["Prospect Démo 02","Attaquant","Lubumbashi","2008"],
+["Prospect Démo 03","Défenseur","Kinshasa","2006"],["Prospect Démo 04","Gardien","Kongo Central","2007"],
+["Prospect Démo 05","Milieu","Kinshasa","2009"],["Prospect Démo 06","Attaquant","Haut-Katanga","2007"],
+["Prospect Démo 07","Défenseur","Nord-Kivu","2008"],["Prospect Démo 08","Milieu","Kinshasa","2006"]];
+function render(list){document.getElementById("players").innerHTML=list.map(x=>`<article class="player"><div class="avatar">${x[0].slice(-2)}</div><span class="pos">${x[1]}</span><h3>${x[0]}</h3><div class="meta">${x[3]} · ${x[2]}</div><div class="score">NGA Score : —</div><span class="tag">Profil bêta</span></article>`).join("")}
+function filter(){let q=document.getElementById("q").value.toLowerCase(),p=document.getElementById("p").value;render(data.filter(x=>(!q||x.join(" ").toLowerCase().includes(q))&&(!p||x[1]===p)))}
+render(data);
+</script>
+</body>
+</html>
