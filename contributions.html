@@ -1,85 +1,597 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contributions — RDC Football Network</title>
+
+<title>Contributions | RDC Football Network</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
-header{background:#071b2d;color:white;padding:22px}
-nav{background:white;padding:12px;display:flex;gap:8px;overflow-x:auto}
-nav a{padding:10px 14px;text-decoration:none;color:#17202a;border-radius:8px;white-space:nowrap}
-nav a:hover,nav a.active{background:#071b2d;color:white}
-main{max-width:800px;margin:auto;padding:30px 18px}
-.box{background:white;padding:30px;border-radius:15px}
-input,textarea,select{width:100%;padding:13px;margin-top:8px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px}
-textarea{min-height:130px}
-button{padding:13px 20px;background:#071b2d;color:white;border:0;border-radius:8px}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fa;
+color:#17202a;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#002b5c,#0055a4);
+color:white;
+padding:18px 5%;
+border-bottom:4px solid #f7d117;
+}
+
+.header{
+max-width:1250px;
+margin:auto;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo{
+width:58px;
+height:58px;
+object-fit:contain;
+}
+
+.header h1{
+margin:0;
+}
+
+.header small{
+opacity:.85;
+}
+
+/* NAVIGATION */
+
+nav{
+background:#001f42;
+padding:10px 5%;
+display:flex;
+gap:6px;
+overflow-x:auto;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:11px 13px;
+border-radius:7px;
+white-space:nowrap;
+font-size:14px;
+}
+
+nav a:hover,
+nav a.active{
+background:#e30613;
+}
+
+/* MAIN */
+
+main{
+max-width:1000px;
+margin:auto;
+padding:35px 5%;
+}
+
+/* INTRO */
+
+.intro{
+margin-bottom:25px;
+}
+
+.intro h2{
+color:#002b5c;
+font-size:30px;
+margin-bottom:8px;
+}
+
+.intro p{
+color:#68737d;
+line-height:1.6;
+}
+
+/* BOX */
+
+.box{
+background:white;
+padding:28px;
+border-radius:18px;
+border:1px solid #e1e5e8;
+margin-bottom:25px;
+box-shadow:0 4px 18px rgba(0,0,0,.04);
+}
+
+/* FORM */
+
+label{
+display:block;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:13px;
+margin-top:6px;
+margin-bottom:18px;
+border:1px solid #ccd3da;
+border-radius:8px;
+font-family:Arial;
+font-size:14px;
+}
+
+textarea{
+min-height:140px;
+resize:vertical;
+}
+
+/* BUTTON */
+
+button{
+padding:13px 22px;
+background:#e30613;
+color:white;
+border:0;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+/* INFO */
+
+.info{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-bottom:25px;
+}
+
+.info-card{
+background:#f5f7fa;
+padding:20px;
+border-radius:12px;
+border-left:4px solid #f7d117;
+}
+
+.info-card strong{
+display:block;
+color:#002b5c;
+margin-bottom:7px;
+}
+
+/* MESSAGE */
+
+.message{
+margin-top:18px;
+font-weight:bold;
+}
+
+.success{
+color:#16803c;
+}
+
+.warning{
+color:#c47a00;
+}
+
+/* FOOTER */
+
+footer{
+background:#001f42;
+color:#aebdca;
+text-align:center;
+padding:30px 5%;
+margin-top:30px;
+font-size:13px;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-<h1>🤝 Contributions</h1>
-<p>Participez à la construction de la base du football congolais</p>
-</header>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="joueurs.html">Joueurs</a>
-<a href="clubs.html">Clubs</a>
-<a href="competitions.html">Compétitions</a>
-<a href="recherche.html">Recherche</a>
-<a href="contributions.html" class="active">Contributions</a>
-</nav>
+<div class="header">
 
-<main>
+<img
+src="logo.png"
+class="logo"
+alt="RDC Football Network"
+>
 
-<div class="box">
+<div>
 
-<h2>Proposer une information</h2>
+<h1>RDC Football Network</h1>
 
-<p>
-Vous avez une information concernant un joueur, un club ou une compétition ?
-Vous pouvez la proposer à la communauté.
-</p>
-
-<label>Type de contribution</label>
-
-<select>
-<option>Joueur</option>
-<option>Club</option>
-<option>Compétition</option>
-<option>Correction d'une information</option>
-</select>
-
-<label>Nom</label>
-<input type="text" placeholder="Nom du joueur, club...">
-
-<label>Information</label>
-<textarea placeholder="Décrivez l'information à ajouter ou corriger"></textarea>
-
-<button onclick="sendContribution()">Envoyer la contribution</button>
-
-<p id="message"></p>
+<small>
+Community & Football Data
+</small>
 
 </div>
 
+</div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">
+Accueil
+</a>
+
+<a href="joueurs.html">
+👤 Joueurs
+</a>
+
+<a href="clubs.html">
+🏟️ Clubs
+</a>
+
+<a href="competitions.html">
+🏆 Compétitions
+</a>
+
+<a href="recherche.html">
+🔎 Recherche
+</a>
+
+<a href="statistiques.html">
+📊 Statistiques
+</a>
+
+<a href="rapports.html">
+📝 Scouting
+</a>
+
+<a href="nga-score.html">
+🧠 NGA Score
+</a>
+
+<a href="nga-value.html">
+💰 NGA Value
+</a>
+
+<a href="binationaux.html">
+🇨🇩 Binationaux
+</a>
+
+<a href="contributions.html" class="active">
+🤝 Contributions
+</a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main>
+
+
+<div class="intro">
+
+<h2>
+🤝 Contributions de la communauté
+</h2>
+
+<p>
+
+RDC Football Network souhaite construire une base de données
+du football congolais avec l'aide des passionnés, scouts,
+clubs et acteurs du football.
+
+</p>
+
+</div>
+
+
+<!-- TYPES DE CONTRIBUTIONS -->
+
+<div class="info">
+
+<div class="info-card">
+
+<strong>👤 Joueur</strong>
+
+Ajouter ou corriger les informations
+d'un joueur.
+
+</div>
+
+
+<div class="info-card">
+
+<strong>🏟️ Club</strong>
+
+Proposer l'ajout d'un club ou
+corriger ses informations.
+
+</div>
+
+
+<div class="info-card">
+
+<strong>🏆 Compétition</strong>
+
+Ajouter une compétition,
+un championnat ou une information.
+
+</div>
+
+
+<div class="info-card">
+
+<strong>📊 Donnée</strong>
+
+Signaler une statistique ou
+une information incorrecte.
+
+</div>
+
+</div>
+
+
+<!-- FORMULAIRE -->
+
+<div class="box">
+
+<h2>
+➕ Proposer une contribution
+</h2>
+
+<p>
+
+Toutes les informations proposées peuvent être
+vérifiées avant d'être ajoutées à la base.
+
+</p>
+
+
+<label>
+Type de contribution
+</label>
+
+<select id="type">
+
+<option value="">
+Sélectionner
+</option>
+
+<option>
+Ajouter un joueur
+</option>
+
+<option>
+Modifier un joueur
+</option>
+
+<option>
+Ajouter un club
+</option>
+
+<option>
+Modifier un club
+</option>
+
+<option>
+Ajouter une compétition
+</option>
+
+<option>
+Corriger une donnée
+</option>
+
+<option>
+Autre
+</option>
+
+</select>
+
+
+<label>
+Nom / élément concerné
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Ex : Nom du joueur ou du club"
+>
+
+
+<label>
+Votre nom
+</label>
+
+<input
+id="author"
+type="text"
+placeholder="Nom ou pseudonyme"
+>
+
+
+<label>
+Email
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="votre@email.com"
+>
+
+
+<label>
+Détails de la contribution
+</label>
+
+<textarea
+id="details"
+placeholder="Expliquez les informations que vous souhaitez ajouter ou corriger..."
+></textarea>
+
+
+<label>
+Source de l'information
+</label>
+
+<input
+id="source"
+type="text"
+placeholder="Ex : club, match, document, lien..."
+>
+
+
+<button onclick="submitContribution()">
+
+📨 Envoyer la contribution
+
+</button>
+
+
+<div id="message" class="message"></div>
+
+</div>
+
+
+<!-- FUTUR -->
+
+<div class="box">
+
+<h2>
+🌍 Construire la base du football congolais
+</h2>
+
+<p>
+
+L'objectif de RDC Football Network est de créer
+progressivement une base de données fiable et
+professionnelle consacrée au football congolais.
+
+</p>
+
+<p>
+
+Les contributions pourront être vérifiées par
+des membres certifiés de la communauté.
+
+</p>
+
+</div>
+
+
 </main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+🇨🇩 <strong>RDC Football Network</strong>
+</p>
+
+<p>
+La donnée au service du football congolais.
+</p>
+
+</footer>
+
 
 <script>
 
-function sendContribution(){
+function submitContribution(){
 
-document.getElementById("message").innerHTML=
-"✅ Merci ! Votre contribution a été enregistrée pour vérification.";
+let type =
+document.getElementById("type").value;
+
+let name =
+document.getElementById("name").value;
+
+let author =
+document.getElementById("author").value;
+
+let email =
+document.getElementById("email").value;
+
+let details =
+document.getElementById("details").value;
+
+let message =
+document.getElementById("message");
+
+
+if(
+!type ||
+!name ||
+!author ||
+!email ||
+!details
+){
+
+message.className =
+"message warning";
+
+message.textContent =
+"⚠️ Merci de remplir tous les champs obligatoires.";
+
+return;
+
+}
+
+
+/*
+Pour l'instant le formulaire
+fonctionne comme prototype.
+
+La prochaine version pourra envoyer
+automatiquement les contributions
+vers une vraie base de données.
+*/
+
+message.className =
+"message success";
+
+message.textContent =
+"✅ Merci ! Votre contribution a été enregistrée dans le prototype.";
+
+document.getElementById("type").value="";
+document.getElementById("name").value="";
+document.getElementById("author").value="";
+document.getElementById("email").value="";
+document.getElementById("details").value="";
+document.getElementById("source").value="";
 
 }
 
 </script>
 
+
 </body>
+
 </html>
