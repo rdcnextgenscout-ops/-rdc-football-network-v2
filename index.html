@@ -1,96 +1,503 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RDC Football Network</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;color:#17202a}
-header{background:#071b2d;color:white;padding:22px}
-header h1{margin:0;font-size:26px}
-header p{margin:6px 0 0;color:#b9c7d4}
-nav{background:white;padding:12px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid #ddd}
-nav a{padding:10px 14px;text-decoration:none;color:#17202a;border-radius:8px;white-space:nowrap}
-nav a:hover,nav a.active{background:#071b2d;color:white}
-main{max-width:1100px;margin:auto;padding:30px 18px}
-.hero{background:white;border-radius:16px;padding:35px;margin-bottom:25px}
-.hero h2{font-size:32px;margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.card{background:white;padding:22px;border-radius:14px;border:1px solid #e1e5e8}
-.card h3{margin-top:0}
-.card a{display:inline-block;margin-top:10px;text-decoration:none;font-weight:bold;color:#075985}
-.badge{display:inline-block;background:#e8f0f6;padding:6px 10px;border-radius:20px;font-size:13px}
-footer{text-align:center;padding:30px;color:#69737d}
+
+/* =========================
+   RDC FOOTBALL NETWORK V3
+========================= */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fa;
+color:#16202a;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#002b5c,#004e9e);
+color:white;
+padding:18px 5%;
+border-bottom:4px solid #f7d117;
+}
+
+.header-container{
+max-width:1250px;
+margin:auto;
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.logo{
+width:62px;
+height:62px;
+object-fit:contain;
+}
+
+.brand h1{
+font-size:25px;
+}
+
+.brand p{
+font-size:13px;
+opacity:.85;
+margin-top:4px;
+}
+
+/* NAVIGATION */
+
+nav{
+background:#001f42;
+padding:10px 5%;
+display:flex;
+gap:6px;
+overflow-x:auto;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:11px 13px;
+border-radius:7px;
+font-size:14px;
+white-space:nowrap;
+}
+
+nav a:hover,
+nav a.active{
+background:#e30613;
+}
+
+/* MAIN */
+
+main{
+max-width:1250px;
+margin:auto;
+padding:35px 5%;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#002b5c,#0055a4);
+color:white;
+padding:45px;
+border-radius:20px;
+position:relative;
+overflow:hidden;
+margin-bottom:30px;
+}
+
+.hero:after{
+content:"🇨🇩";
+position:absolute;
+right:40px;
+top:25px;
+font-size:100px;
+opacity:.08;
+}
+
+.hero-label{
+display:inline-block;
+background:#e30613;
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+.hero h2{
+font-size:38px;
+margin:18px 0 12px;
+max-width:700px;
+}
+
+.hero p{
+max-width:650px;
+line-height:1.6;
+color:#dce9f5;
+}
+
+/* SECTION */
+
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:30px 0 15px;
+}
+
+.section-title h2{
+font-size:22px;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.card{
+background:white;
+border-radius:16px;
+padding:23px;
+border:1px solid #e2e6ea;
+box-shadow:0 5px 18px rgba(0,0,0,.04);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.icon{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.card h3{
+margin-bottom:9px;
+}
+
+.card p{
+color:#68737d;
+line-height:1.5;
+font-size:14px;
+}
+
+.card a{
+display:inline-block;
+margin-top:15px;
+color:#0055a4;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* STATS */
+
+.stat{
+background:white;
+padding:22px;
+border-radius:15px;
+border-left:5px solid #f7d117;
+}
+
+.stat strong{
+display:block;
+font-size:30px;
+color:#002b5c;
+margin-bottom:5px;
+}
+
+.stat span{
+font-size:13px;
+color:#68737d;
+}
+
+/* FOOTER */
+
+footer{
+background:#001f42;
+color:#aebdca;
+padding:30px 5%;
+margin-top:40px;
+text-align:center;
+font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hero{
+padding:30px 22px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.logo{
+width:52px;
+height:52px;
+}
+
+.brand h1{
+font-size:20px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>🇨🇩 RDC Football Network</h1>
-<p>La base du football congolais</p>
+
+<div class="header-container">
+
+<img src="logo.png"
+class="logo"
+alt="RDC Football Network">
+
+<div class="brand">
+
+<h1>RDC Football Network</h1>
+
+<p>Data • Scouting • Football congolais</p>
+
+</div>
+
+</div>
+
 </header>
 
+
 <nav>
+
 <a href="index.html" class="active">Accueil</a>
-<a href="joueurs.html">Joueurs</a>
-<a href="clubs.html">Clubs</a>
-<a href="competitions.html">Compétitions</a>
-<a href="recherche.html">Recherche</a>
-<a href="contributions.html">Contributions</a>
+
+<a href="joueurs.html">👤 Joueurs</a>
+
+<a href="clubs.html">🏟️ Clubs</a>
+
+<a href="competitions.html">🏆 Compétitions</a>
+
+<a href="recherche.html">🔎 Recherche</a>
+
+<a href="statistiques.html">📊 Statistiques</a>
+
+<a href="rapports.html">📝 Scouting</a>
+
+<a href="nga-score.html">🧠 NGA Score</a>
+
+<a href="nga-value.html">💰 NGA Value</a>
+
+<a href="binationaux.html">🇨🇩 Binationaux</a>
+
+<a href="contributions.html">🤝 Contributions</a>
+
 </nav>
+
 
 <main>
 
 <section class="hero">
-<span class="badge">BÊTA 2</span>
-<h2>La base du football congolais</h2>
+
+<span class="hero-label">
+BÊTA 3
+</span>
+
+<h2>
+La nouvelle génération du scouting congolais.
+</h2>
+
 <p>
-RDC Football Network a pour objectif de centraliser les informations
-sur les joueurs, clubs et compétitions du football congolais.
+RDC Football Network rassemble les données du football
+congolais pour faciliter l'identification, l'analyse
+et le suivi des joueurs.
 </p>
-</section>
-
-<section class="grid">
-
-<div class="card">
-<h3>👤 Joueurs</h3>
-<p>Explorez la base des joueurs congolais.</p>
-<a href="joueurs.html">Voir les joueurs →</a>
-</div>
-
-<div class="card">
-<h3>🏟️ Clubs</h3>
-<p>Découvrez les clubs et leurs informations.</p>
-<a href="clubs.html">Voir les clubs →</a>
-</div>
-
-<div class="card">
-<h3>🏆 Compétitions</h3>
-<p>Retrouvez les principales compétitions congolaises.</p>
-<a href="competitions.html">Voir les compétitions →</a>
-</div>
-
-<div class="card">
-<h3>🔎 Recherche</h3>
-<p>Recherchez rapidement un joueur ou un club.</p>
-<a href="recherche.html">Rechercher →</a>
-</div>
-
-<div class="card">
-<h3>🤝 Contributions</h3>
-<p>Aidez la communauté à améliorer la base.</p>
-<a href="contributions.html">Contribuer →</a>
-</div>
 
 </section>
+
+
+<div class="section-title">
+
+<h2>Plateforme</h2>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">👤</div>
+
+<h3>Joueurs</h3>
+
+<p>
+Découvrez les profils des joueurs évoluant
+dans le football congolais.
+</p>
+
+<a href="joueurs.html">
+Explorer →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏟️</div>
+
+<h3>Clubs</h3>
+
+<p>
+Retrouvez les clubs, leurs effectifs
+et leurs informations.
+</p>
+
+<a href="clubs.html">
+Explorer →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏆</div>
+
+<h3>Compétitions</h3>
+
+<p>
+Explorez les compétitions nationales
+et provinciales.
+</p>
+
+<a href="competitions.html">
+Explorer →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📊</div>
+
+<h3>Data</h3>
+
+<p>
+Analysez les statistiques et performances
+des joueurs.
+</p>
+
+<a href="statistiques.html">
+Voir la data →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📝</div>
+
+<h3>Scouting</h3>
+
+<p>
+Consultez les rapports et compilations
+vidéo des scouts.
+</p>
+
+<a href="rapports.html">
+Voir les rapports →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🧠</div>
+
+<h3>NGA Intelligence</h3>
+
+<p>
+Découvrez les futurs systèmes d'évaluation
+des talents.
+</p>
+
+<a href="nga-score.html">
+Découvrir →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="section-title">
+
+<h2>RDC Football Network en chiffres</h2>
+
+</div>
+
+
+<div class="grid">
+
+<div class="stat">
+
+<strong>0+</strong>
+
+<span>Joueurs référencés</span>
+
+</div>
+
+<div class="stat">
+
+<strong>0+</strong>
+
+<span>Clubs référencés</span>
+
+</div>
+
+<div class="stat">
+
+<strong>0+</strong>
+
+<span>Compétitions</span>
+
+</div>
+
+<div class="stat">
+
+<strong>V3</strong>
+
+<span>Version de la plateforme</span>
+
+</div>
+
+</div>
 
 </main>
 
+
 <footer>
-RDC Football Network — Bêta 2
+
+<p>
+🇨🇩 RDC Football Network
+</p>
+
+<p>
+La donnée au service du football congolais.
+</p>
+
 </footer>
 
 </body>
+
 </html>
