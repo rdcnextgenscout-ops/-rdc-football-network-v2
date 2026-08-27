@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contributions — RDC Football Network</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
+header{background:#071b2d;color:white;padding:22px}
+nav{background:white;padding:12px;display:flex;gap:8px;overflow-x:auto}
+nav a{padding:10px 14px;text-decoration:none;color:#17202a;border-radius:8px;white-space:nowrap}
+nav a:hover,nav a.active{background:#071b2d;color:white}
+main{max-width:800px;margin:auto;padding:30px 18px}
+.box{background:white;padding:30px;border-radius:15px}
+input,textarea,select{width:100%;padding:13px;margin-top:8px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px}
+textarea{min-height:130px}
+button{padding:13px 20px;background:#071b2d;color:white;border:0;border-radius:8px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🤝 Contributions</h1>
+<p>Participez à la construction de la base du football congolais</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="joueurs.html">Joueurs</a>
+<a href="clubs.html">Clubs</a>
+<a href="competitions.html">Compétitions</a>
+<a href="recherche.html">Recherche</a>
+<a href="contributions.html" class="active">Contributions</a>
+</nav>
+
+<main>
+
+<div class="box">
+
+<h2>Proposer une information</h2>
+
+<p>
+Vous avez une information concernant un joueur, un club ou une compétition ?
+Vous pouvez la proposer à la communauté.
+</p>
+
+<label>Type de contribution</label>
+
+<select>
+<option>Joueur</option>
+<option>Club</option>
+<option>Compétition</option>
+<option>Correction d'une information</option>
+</select>
+
+<label>Nom</label>
+<input type="text" placeholder="Nom du joueur, club...">
+
+<label>Information</label>
+<textarea placeholder="Décrivez l'information à ajouter ou corriger"></textarea>
+
+<button onclick="sendContribution()">Envoyer la contribution</button>
+
+<p id="message"></p>
+
+</div>
+
+</main>
+
+<script>
+
+function sendContribution(){
+
+document.getElementById("message").innerHTML=
+"✅ Merci ! Votre contribution a été enregistrée pour vérification.";
+
+}
+
+</script>
+
+</body>
+</html>
