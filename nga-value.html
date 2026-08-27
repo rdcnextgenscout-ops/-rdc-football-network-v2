@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NGA Value | RDC Football Network</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f7fa;
+color:#17202a
+}
+
+header{
+background:linear-gradient(135deg,#002b5c,#0055a4);
+color:white;
+padding:18px 5%;
+border-bottom:4px solid #f7d117
+}
+
+.header{
+max-width:1250px;
+margin:auto;
+display:flex;
+align-items:center;
+gap:15px
+}
+
+.logo{
+width:58px;
+height:58px;
+object-fit:contain
+}
+
+nav{
+background:#001f42;
+padding:10px 5%;
+display:flex;
+gap:6px;
+overflow-x:auto
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:11px 13px;
+border-radius:7px;
+white-space:nowrap;
+font-size:14px
+}
+
+nav a:hover,
+nav a.active{
+background:#e30613
+}
+
+main{
+max-width:800px;
+margin:auto;
+padding:35px 5%
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:18px;
+border:1px solid #ddd
+}
+
+input{
+width:100%;
+padding:13px;
+margin:7px 0 17px;
+border:1px solid #ccd3da;
+border-radius:8px
+}
+
+button{
+padding:13px 20px;
+background:#e30613;
+color:white;
+border:0;
+border-radius:8px;
+font-weight:bold
+}
+
+.value{
+margin-top:25px;
+background:#002b5c;
+color:white;
+padding:30px;
+border-radius:15px;
+text-align:center
+}
+
+.value strong{
+font-size:40px;
+color:#f7d117
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<img src="logo.png" class="logo">
+
+<div>
+
+<h1>RDC Football Network</h1>
+
+<small>Player Valuation</small>
+
+</div>
+
+</div>
+
+</header>
+
+<nav>
+
+<a href="index.html">Accueil</a>
+<a href="joueurs.html">👤 Joueurs</a>
+<a href="clubs.html">🏟️ Clubs</a>
+<a href="competitions.html">🏆 Compétitions</a>
+<a href="recherche.html">🔎 Recherche</a>
+<a href="statistiques.html">📊 Statistiques</a>
+<a href="rapports.html">📝 Scouting</a>
+<a href="nga-score.html">🧠 NGA Score</a>
+<a href="nga-value.html" class="active">💰 NGA Value</a>
+<a href="binationaux.html">🇨🇩 Binationaux</a>
+<a href="contributions.html">🤝 Contributions</a>
+
+</nav>
+
+<main>
+
+<div class="box">
+
+<h2>💰 NGA Value</h2>
+
+<p>
+Prototype d'estimation de la valeur de marché d'un joueur.
+</p>
+
+<label>NGA Score</label>
+
+<input id="score" type="number" min="0" max="100" value="50">
+
+<label>Âge</label>
+
+<input id="age" type="number" min="14" max="40" value="18">
+
+<button onclick="calculateValue()">
+Estimer la valeur
+</button>
+
+<div class="value">
+
+<p>NGA VALUE</p>
+
+<strong id="result">50 000 €</strong>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+function calculateValue(){
+
+let score=
+Number(document.getElementById("score").value);
+
+let age=
+Number(document.getElementById("age").value);
+
+let value=score*1000;
+
+if(age<=20){
+
+value*=1.5;
+
+}
+
+else if(age<=23){
+
+value*=1.2;
+
+}
+
+value=Math.round(value);
+
+document.getElementById("result").textContent=
+value.toLocaleString("fr-FR")+" €";
+
+}
+
+</script>
+
+</body>
+
+</html>
