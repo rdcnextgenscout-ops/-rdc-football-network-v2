@@ -3,71 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clubs — RDC Football Network</title>
+<title>Clubs | RDC Football Network</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
-header{background:#071b2d;color:white;padding:22px}
-nav{background:white;padding:12px;display:flex;gap:8px;overflow-x:auto}
-nav a{padding:10px 14px;text-decoration:none;color:#17202a;border-radius:8px;white-space:nowrap}
-nav a:hover,nav a.active{background:#071b2d;color:white}
-main{max-width:1100px;margin:auto;padding:30px 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:white;padding:22px;border-radius:14px;border:1px solid #ddd}
-.badge{background:#e8f0f6;padding:6px 10px;border-radius:20px;font-size:12px}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#17202a}
+header{background:linear-gradient(135deg,#002b5c,#0055a4);color:white;padding:18px 5%;border-bottom:4px solid #f7d117}
+.header{max-width:1250px;margin:auto;display:flex;align-items:center;gap:15px}
+.logo{width:58px;height:58px;object-fit:contain}
+nav{background:#001f42;padding:10px 5%;display:flex;gap:6px;overflow-x:auto}
+nav a{color:white;text-decoration:none;padding:11px 13px;border-radius:7px;white-space:nowrap;font-size:14px}
+nav a:hover,nav a.active{background:#e30613}
+main{max-width:1250px;margin:auto;padding:30px 5%}
+h2{color:#002b5c}
+.subtitle{color:#68737d}
+.filters{background:white;padding:20px;border-radius:15px;margin:25px 0;border:1px solid #e1e5e8}
+input,select{padding:13px;border:1px solid #ccd3da;border-radius:8px;margin:5px}
+button{padding:13px 20px;background:#e30613;color:white;border:0;border-radius:8px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:15px;border:1px solid #e1e5e8;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.club-logo{width:65px;height:65px;border-radius:50%;background:#eef2f6;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:15px}
+.badge{display:inline-block;background:#edf3f8;padding:6px 10px;border-radius:20px;font-size:12px}
+.card h3{color:#002b5c}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🏟️ Clubs</h1>
-<p>Les clubs du football congolais</p>
+<div class="header">
+<img src="logo.png" class="logo">
+<div>
+<h1>RDC Football Network</h1>
+<small>Clubs & Football Data</small>
+</div>
+</div>
 </header>
 
 <nav>
 <a href="index.html">Accueil</a>
-<a href="joueurs.html">Joueurs</a>
-<a href="clubs.html" class="active">Clubs</a>
-<a href="competitions.html">Compétitions</a>
-<a href="recherche.html">Recherche</a>
-<a href="contributions.html">Contributions</a>
+<a href="joueurs.html">👤 Joueurs</a>
+<a href="clubs.html" class="active">🏟️ Clubs</a>
+<a href="competitions.html">🏆 Compétitions</a>
+<a href="recherche.html">🔎 Recherche</a>
+<a href="statistiques.html">📊 Statistiques</a>
+<a href="rapports.html">📝 Scouting</a>
+<a href="nga-score.html">🧠 NGA Score</a>
+<a href="nga-value.html">💰 NGA Value</a>
+<a href="binationaux.html">🇨🇩 Binationaux</a>
+<a href="contributions.html">🤝 Contributions</a>
 </nav>
 
 <main>
 
-<h2>Clubs référencés</h2>
+<h2>🏟️ Clubs</h2>
+<p class="subtitle">Les clubs référencés dans la base du football congolais.</p>
 
-<div class="grid">
+<div class="filters">
 
-<div class="card">
-<h3>🇨🇩 TP Mazembe</h3>
-<span class="badge">Ligue 1</span>
-<p>Lubumbashi</p>
+<input id="search" placeholder="Rechercher un club...">
+
+<select id="city">
+<option value="">Toutes les villes</option>
+<option>Kinshasa</option>
+<option>Lubumbashi</option>
+<option>Goma</option>
+<option>Matadi</option>
+</select>
+
+<button onclick="filterClubs()">Rechercher</button>
+
 </div>
 
-<div class="card">
-<h3>🇨🇩 AS Vita Club</h3>
+<div class="grid" id="clubs">
+
+<div class="card club" data-name="TP Mazembe" data-city="Lubumbashi">
+<div class="club-logo">⚽</div>
+<h3>TP Mazembe</h3>
 <span class="badge">Ligue 1</span>
-<p>Kinshasa</p>
+<p>📍 Lubumbashi</p>
 </div>
 
-<div class="card">
-<h3>🇨🇩 DCMP</h3>
+<div class="card club" data-name="AS Vita Club" data-city="Kinshasa">
+<div class="club-logo">⚽</div>
+<h3>AS Vita Club</h3>
 <span class="badge">Ligue 1</span>
-<p>Kinshasa</p>
+<p>📍 Kinshasa</p>
 </div>
 
-<div class="card">
-<h3>🇨🇩 FC Lupopo</h3>
+<div class="card club" data-name="DCMP" data-city="Kinshasa">
+<div class="club-logo">⚽</div>
+<h3>DCMP</h3>
 <span class="badge">Ligue 1</span>
-<p>Lubumbashi</p>
+<p>📍 Kinshasa</p>
+</div>
+
+<div class="card club" data-name="FC Lupopo" data-city="Lubumbashi">
+<div class="club-logo">⚽</div>
+<h3>FC Lupopo</h3>
+<span class="badge">Ligue 1</span>
+<p>📍 Lubumbashi</p>
 </div>
 
 </div>
 
 </main>
+
+<script>
+function filterClubs(){
+
+let search=document.getElementById("search").value.toLowerCase();
+let city=document.getElementById("city").value;
+
+document.querySelectorAll(".club").forEach(club=>{
+
+let name=club.dataset.name.toLowerCase();
+let clubCity=club.dataset.city;
+
+club.style.display=
+name.includes(search) &&
+(!city || clubCity===city)
+?"block":"none";
+
+});
+}
+</script>
 
 </body>
 </html>
