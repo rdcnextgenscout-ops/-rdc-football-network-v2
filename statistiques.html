@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Statistiques | RDC Football Network</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f7fa;
+color:#17202a
+}
+
+header{
+background:linear-gradient(135deg,#002b5c,#0055a4);
+color:white;
+padding:18px 5%;
+border-bottom:4px solid #f7d117
+}
+
+.header{
+max-width:1250px;
+margin:auto;
+display:flex;
+align-items:center;
+gap:15px
+}
+
+.logo{
+width:58px;
+height:58px;
+object-fit:contain
+}
+
+nav{
+background:#001f42;
+padding:10px 5%;
+display:flex;
+gap:6px;
+overflow-x:auto
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:11px 13px;
+border-radius:7px;
+white-space:nowrap;
+font-size:14px
+}
+
+nav a:hover,
+nav a.active{
+background:#e30613
+}
+
+main{
+max-width:1200px;
+margin:auto;
+padding:30px 5%
+}
+
+.filter{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:25px
+}
+
+select,input{
+padding:13px;
+border:1px solid #ccd3da;
+border-radius:8px;
+margin:5px
+}
+
+button{
+padding:13px 20px;
+background:#e30613;
+color:white;
+border:0;
+border-radius:8px;
+font-weight:bold
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:15px;
+overflow:hidden
+}
+
+th{
+background:#002b5c;
+color:white;
+padding:15px;
+text-align:left
+}
+
+td{
+padding:15px;
+border-bottom:1px solid #eee
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<img src="logo.png" class="logo">
+
+<div>
+
+<h1>RDC Football Network</h1>
+
+<small>Data & Performance</small>
+
+</div>
+
+</div>
+
+</header>
+
+<nav>
+
+<a href="index.html">Accueil</a>
+<a href="joueurs.html">👤 Joueurs</a>
+<a href="clubs.html">🏟️ Clubs</a>
+<a href="competitions.html">🏆 Compétitions</a>
+<a href="recherche.html">🔎 Recherche</a>
+<a href="statistiques.html" class="active">📊 Statistiques</a>
+<a href="rapports.html">📝 Scouting</a>
+<a href="nga-score.html">🧠 NGA Score</a>
+<a href="nga-value.html">💰 NGA Value</a>
+<a href="binationaux.html">🇨🇩 Binationaux</a>
+<a href="contributions.html">🤝 Contributions</a>
+
+</nav>
+
+<main>
+
+<h2>📊 Statistiques</h2>
+
+<p>
+Analyse des performances individuelles.
+</p>
+
+<div class="filter">
+
+<input id="search" placeholder="Rechercher un joueur">
+
+<select id="position">
+
+<option value="">Tous les postes</option>
+<option>Gardien</option>
+<option>Défenseur</option>
+<option>Milieu</option>
+<option>Attaquant</option>
+
+</select>
+
+<button onclick="filterStats()">
+Filtrer
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Joueur</th>
+<th>Poste</th>
+<th>Matchs</th>
+<th>Buts</th>
+<th>Passes</th>
+<th>Minutes</th>
+
+</tr>
+
+</thead>
+
+<tbody id="stats">
+
+<tr data-name="Faveurdi Bongeli" data-position="Attaquant">
+
+<td>Faveurdi Bongeli</td>
+<td>Attaquant</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+
+</tr>
+
+<tr data-name="Benjamin Kahite" data-position="Milieu">
+
+<td>Benjamin Kahite</td>
+<td>Milieu</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+
+</tr>
+
+<tr data-name="Esdras Makosi" data-position="Défenseur">
+
+<td>Esdras Makosi</td>
+<td>Défenseur</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</main>
+
+<script>
+
+function filterStats(){
+
+let search=
+document.getElementById("search")
+.value
+.toLowerCase();
+
+let position=
+document.getElementById("position")
+.value;
+
+document.querySelectorAll("#stats tr").forEach(row=>{
+
+let name=
+row.dataset.name.toLowerCase();
+
+let pos=
+row.dataset.position;
+
+row.style.display=
+name.includes(search) &&
+(!position || pos===position)
+?"table-row":"none";
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
