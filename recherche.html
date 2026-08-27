@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recherche — RDC Football Network</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
+header{background:#071b2d;color:white;padding:22px}
+nav{background:white;padding:12px;display:flex;gap:8px;overflow-x:auto}
+nav a{padding:10px 14px;text-decoration:none;color:#17202a;border-radius:8px;white-space:nowrap}
+nav a:hover,nav a.active{background:#071b2d;color:white}
+main{max-width:900px;margin:auto;padding:30px 18px}
+.box{background:white;padding:30px;border-radius:15px}
+input{width:100%;padding:15px;border:1px solid #ccc;border-radius:8px}
+button{margin-top:15px;padding:12px 20px;background:#071b2d;color:white;border:0;border-radius:8px}
+.result{margin-top:20px;padding:18px;background:#f4f6f8;border-radius:10px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔎 Recherche</h1>
+<p>Rechercher dans RDC Football Network</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="joueurs.html">Joueurs</a>
+<a href="clubs.html">Clubs</a>
+<a href="competitions.html">Compétitions</a>
+<a href="recherche.html" class="active">Recherche</a>
+<a href="contributions.html">Contributions</a>
+</nav>
+
+<main>
+
+<div class="box">
+
+<h2>Recherche globale</h2>
+
+<input id="search" type="text" placeholder="Rechercher un joueur, club ou compétition...">
+
+<button onclick="search()">Rechercher</button>
+
+<div id="result"></div>
+
+</div>
+
+</main>
+
+<script>
+
+function search(){
+
+const value=document.getElementById("search").value.toLowerCase();
+
+const data=[
+"Faveurdi Bongeli — Joueur",
+"Benjamin Kahite — Joueur",
+"Esdras Makosi — Joueur",
+"TP Mazembe — Club",
+"AS Vita Club — Club",
+"DCMP — Club",
+"Illicocash Ligue 1 — Compétition",
+"Illicocash Ligue 2 — Compétition",
+"EPFKIN — Compétition"
+];
+
+const results=data.filter(item=>item.toLowerCase().includes(value));
+
+if(!value){
+document.getElementById("result").innerHTML="<div class='result'>Entrez une recherche.</div>";
+return;
+}
+
+if(results.length===0){
+document.getElementById("result").innerHTML="<div class='result'>Aucun résultat trouvé.</div>";
+return;
+}
+
+document.getElementById("result").innerHTML=
+results.map(item=>"<div class='result'>"+item+"</div>").join("");
+
+}
+
+</script>
+
+</body>
+</html>
