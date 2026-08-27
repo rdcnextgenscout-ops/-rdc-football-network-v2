@@ -3,60 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compétitions — RDC Football Network</title>
+
+<title>Compétitions | RDC Football Network</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f4f6f8;color:#17202a}
-header{background:#071b2d;color:white;padding:22px}
-nav{background:white;padding:12px;display:flex;gap:8px;overflow-x:auto}
-nav a{padding:10px 14px;text-decoration:none;color:#17202a;border-radius:8px;white-space:nowrap}
-nav a:hover,nav a.active{background:#071b2d;color:white}
-main{max-width:1100px;margin:auto;padding:30px 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:white;padding:25px;border-radius:14px;border:1px solid #ddd}
+body{margin:0;font-family:Arial;background:#f5f7fa;color:#17202a}
+header{background:linear-gradient(135deg,#002b5c,#0055a4);color:white;padding:18px 5%;border-bottom:4px solid #f7d117}
+.header{max-width:1250px;margin:auto;display:flex;align-items:center;gap:15px}
+.logo{width:58px;height:58px;object-fit:contain}
+nav{background:#001f42;padding:10px 5%;display:flex;gap:6px;overflow-x:auto}
+nav a{color:white;text-decoration:none;padding:11px 13px;border-radius:7px;white-space:nowrap;font-size:14px}
+nav a:hover,nav a.active{background:#e30613}
+main{max-width:1250px;margin:auto;padding:30px 5%}
+h2{color:#002b5c}
+.subtitle{color:#68737d}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:25px}
+.card{background:white;padding:25px;border-radius:15px;border:1px solid #e1e5e8}
+.icon{font-size:35px;margin-bottom:15px}
+.badge{background:#edf3f8;padding:6px 10px;border-radius:20px;font-size:12px}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🏆 Compétitions</h1>
-<p>Les compétitions du football congolais</p>
+<div class="header">
+<img src="logo.png" class="logo">
+<div>
+<h1>RDC Football Network</h1>
+<small>Competitions & Football Data</small>
+</div>
+</div>
 </header>
 
 <nav>
 <a href="index.html">Accueil</a>
-<a href="joueurs.html">Joueurs</a>
-<a href="clubs.html">Clubs</a>
-<a href="competitions.html" class="active">Compétitions</a>
-<a href="recherche.html">Recherche</a>
-<a href="contributions.html">Contributions</a>
+<a href="joueurs.html">👤 Joueurs</a>
+<a href="clubs.html">🏟️ Clubs</a>
+<a href="competitions.html" class="active">🏆 Compétitions</a>
+<a href="recherche.html">🔎 Recherche</a>
+<a href="statistiques.html">📊 Statistiques</a>
+<a href="rapports.html">📝 Scouting</a>
+<a href="nga-score.html">🧠 NGA Score</a>
+<a href="nga-value.html">💰 NGA Value</a>
+<a href="binationaux.html">🇨🇩 Binationaux</a>
+<a href="contributions.html">🤝 Contributions</a>
 </nav>
 
 <main>
 
-<h2>Compétitions référencées</h2>
+<h2>🏆 Compétitions</h2>
+
+<p class="subtitle">
+Les compétitions intégrées à RDC Football Network.
+</p>
 
 <div class="grid">
 
 <div class="card">
-<h3>🇨🇩 Illicocash Ligue 1</h3>
+<div class="icon">🏆</div>
+<h3>Illicocash Ligue 1</h3>
+<span class="badge">Niveau 1</span>
 <p>Championnat national de première division.</p>
 </div>
 
 <div class="card">
-<h3>🇨🇩 Illicocash Ligue 2</h3>
+<div class="icon">🥇</div>
+<h3>Illicocash Ligue 2</h3>
+<span class="badge">Niveau 2</span>
 <p>Deuxième niveau du football congolais.</p>
 </div>
 
 <div class="card">
-<h3>🏙️ EPFKIN</h3>
+<div class="icon">🏙️</div>
+<h3>EPFKIN</h3>
+<span class="badge">Kinshasa</span>
 <p>Championnat provincial de Kinshasa.</p>
 </div>
 
 <div class="card">
-<h3>🏆 Coupe du Congo</h3>
+<div class="icon">🇨🇩</div>
+<h3>Coupe du Congo</h3>
+<span class="badge">National</span>
 <p>Compétition nationale à élimination.</p>
 </div>
 
